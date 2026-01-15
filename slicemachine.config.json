@@ -1,0 +1,6 @@
+{
+  "libraries": ["./src/slices"],
+  "adapter": "@slicemachine/adapter-next",
+  "repositoryName": "dantinos-dev",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}
