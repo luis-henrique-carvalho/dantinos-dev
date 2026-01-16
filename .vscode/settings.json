@@ -1,0 +1,9 @@
+{
+    "chat.mcp.serverSampling": {
+        "dantinos-dev/.vscode/mcp.json: fetch": {
+            "allowedModels": [
+                "copilot/claude-sonnet-4.5"
+            ]
+        }
+    }
+}

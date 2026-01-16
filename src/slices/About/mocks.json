@@ -1,0 +1,96 @@
+[
+    {
+        "__TYPE__": "SharedSliceContent",
+        "variation": "default",
+        "primary": {
+            "heading": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                    {
+                        "type": "heading1",
+                        "content": {
+                            "text": "Brass"
+                        }
+                    }
+                ]
+            },
+            "description": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                    {
+                        "type": "paragraph",
+                        "content": {
+                            "text": "Officia consectetur nulla velit aliqua excepteur ut sit minim mollit eiusmod adipisicing eiusmod commodo. Mollit consequat anim eu proident."
+                        }
+                    }
+                ]
+            },
+            "services": {
+                "__TYPE__": "GroupContentType",
+                "value": [
+                    {
+                        "__TYPE__": "GroupItemContent",
+                        "value": [
+                            [
+                                "icon",
+                                {
+                                    "__TYPE__": "FieldContent",
+                                    "value": "Cloud",
+                                    "type": "Select"
+                                }
+                            ],
+                            [
+                                "title",
+                                {
+                                    "__TYPE__": "FieldContent",
+                                    "value": "winter",
+                                    "type": "Text"
+                                }
+                            ],
+                            [
+                                "description",
+                                {
+                                    "__TYPE__": "FieldContent",
+                                    "value": "ate",
+                                    "type": "Text"
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            },
+            "stats": {
+                "__TYPE__": "GroupContentType",
+                "value": [
+                    {
+                        "__TYPE__": "GroupItemContent",
+                        "value": [
+                            [
+                                "value",
+                                {
+                                    "__TYPE__": "FieldContent",
+                                    "value": "which",
+                                    "type": "Text"
+                                }
+                            ],
+                            [
+                                "label",
+                                {
+                                    "__TYPE__": "FieldContent",
+                                    "value": "of",
+                                    "type": "Text"
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            }
+        },
+        "items": [
+            {
+                "__TYPE__": "GroupItemContent",
+                "value": []
+            }
+        ]
+    }
+]

@@ -1,0 +1,17 @@
+{
+  "inputs": [
+    // The "inputs" section defines the inputs required for the MCP server configuration.
+    {
+      "type": "promptString"
+    }
+  ],
+  "servers": {
+    "prismic": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@prismicio/mcp-server@latest"
+      ]
+    },
+  }
+}

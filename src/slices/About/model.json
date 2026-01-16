@@ -1,0 +1,96 @@
+{
+    "id": "about",
+    "type": "SharedSlice",
+    "name": "About",
+    "description": "About section with timeline services and statistics",
+    "variations": [
+        {
+            "id": "default",
+            "name": "Default",
+            "docURL": "...",
+            "version": "initial",
+            "description": "Default",
+            "imageUrl": "",
+            "primary": {
+                "heading": {
+                    "type": "StructuredText",
+                    "config": {
+                        "label": "Heading",
+                        "single": "heading1,heading2"
+                    }
+                },
+                "description": {
+                    "type": "StructuredText",
+                    "config": {
+                        "label": "Description",
+                        "multi": "paragraph,strong,em,hyperlink"
+                    }
+                },
+                "services": {
+                    "type": "Group",
+                    "config": {
+                        "label": "Services",
+                        "repeat": true,
+                        "fields": {
+                            "icon": {
+                                "type": "Select",
+                                "config": {
+                                    "label": "Icon",
+                                    "options": [
+                                        "Code",
+                                        "Smartphone",
+                                        "Server",
+                                        "Database",
+                                        "Globe",
+                                        "Zap",
+                                        "Cpu",
+                                        "Layers",
+                                        "Cloud"
+                                    ]
+                                }
+                            },
+                            "title": {
+                                "type": "Text",
+                                "config": {
+                                    "label": "Title",
+                                    "placeholder": "Service name"
+                                }
+                            },
+                            "description": {
+                                "type": "Text",
+                                "config": {
+                                    "label": "Description",
+                                    "placeholder": "Brief description of the service"
+                                }
+                            }
+                        }
+                    }
+                },
+                "stats": {
+                    "type": "Group",
+                    "config": {
+                        "label": "Stats",
+                        "repeat": true,
+                        "fields": {
+                            "value": {
+                                "type": "Text",
+                                "config": {
+                                    "label": "Value",
+                                    "placeholder": "120+ or 95%"
+                                }
+                            },
+                            "label": {
+                                "type": "Text",
+                                "config": {
+                                    "label": "Label",
+                                    "placeholder": "Completed Projects"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "items": {}
+        }
+    ]
+}
