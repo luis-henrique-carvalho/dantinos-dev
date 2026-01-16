@@ -14,6 +14,7 @@ export const repositoryName =
 const routes: prismic.ClientConfig["routes"] = [
   { type: "page", path: "/", uid: "home" },
   { type: "page", path: "/:uid" },
+  { type: "blog_post", path: "/blog/:uid" },
   { type: "settings", path: "/" },
   { type: "navigation", path: "/" },
 ];
@@ -29,8 +30,8 @@ export const createClient = (config: prismic.ClientConfig = {}) => {
     routes,
     fetchOptions:
       process.env.NODE_ENV === "production"
-        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
-        : { next: { revalidate: 5 } },
+        ? { next: { tags: ["prismic"] }, cache: "force-cache" } as unknown as prismic.RequestInitLike
+        : { next: { revalidate: 5 } } as unknown as prismic.RequestInitLike,
     ...config,
   });
 
