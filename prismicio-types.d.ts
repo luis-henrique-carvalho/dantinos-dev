@@ -314,24 +314,54 @@ export type AllDocumentTypes =
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Text field in *Hero → Default → Primary*
+   * Greeting field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   * - **Field Type**: Text
+   * - **Placeholder**: Hello
+   * - **API ID Path**: hero.default.primary.greeting
+   * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  text: prismic.RichTextField;
+  greeting: prismic.KeyTextField;
 
   /**
-   * Button Link field in *Hero → Default → Primary*
+   * Name field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: I'm Jensen
+   * - **API ID Path**: hero.default.primary.name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Title field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Software Developer
+   * - **API ID Path**: hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Primary Button Text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Got a project?
+   * - **API ID Path**: hero.default.primary.primaryButtonText
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  primaryButtonText: prismic.KeyTextField;
+
+  /**
+   * Primary Button Link field in *Hero → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.buttonLink
+   * - **API ID Path**: hero.default.primary.primaryButtonLink
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  buttonLink: prismic.LinkField<
+  primaryButtonLink: prismic.LinkField<
     string,
     string,
     unknown,
@@ -340,24 +370,40 @@ export interface HeroSliceDefaultPrimary {
   >;
 
   /**
-   * Button Text field in *Hero → Default → Primary*
+   * Secondary Button Text field in *Hero → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.buttonText
+   * - **Placeholder**: My resume
+   * - **API ID Path**: hero.default.primary.secondaryButtonText
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  buttonText: prismic.KeyTextField;
+  secondaryButtonText: prismic.KeyTextField;
 
   /**
-   * Background Image field in *Hero → Default → Primary*
+   * Secondary Button Link field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.secondaryButtonLink
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  secondaryButtonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Profile Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.backgroundImage
+   * - **API ID Path**: hero.default.primary.profileImage
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  backgroundImage: prismic.ImageField<never>;
+  profileImage: prismic.ImageField<never>;
 }
 
 /**

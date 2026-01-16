@@ -25,6 +25,7 @@
 				]
 			},
 			"buttonLink": {
+				"key": "8eaa89fb-0170-42f4-b7ae-dc94117daf38",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
@@ -37,7 +38,6 @@
 				"type": "Text"
 			},
 			"backgroundImage": {
-				"__TYPE__": "ImageContent",
 				"url": "https://images.unsplash.com/photo-1616679312958-a86d9539afae?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTk1MzAwNDZ8MA&ixlib=rb-4.0.3&q=85",
 				"alt": "orange fruit on white ceramic plate",
 				"origin": {
@@ -56,6 +56,8 @@
 						"y": 0
 					}
 				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},

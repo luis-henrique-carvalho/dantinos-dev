@@ -11,34 +11,61 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Hero",
       "primary": {
-        "text": {
-          "type": "StructuredText",
+        "greeting": {
+          "type": "Text",
           "config": {
-            "label": "Text",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,heading1,strong,em"
+            "label": "Greeting",
+            "placeholder": "Hello"
           }
         },
-        "buttonLink": {
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": "I'm Jensen"
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Software Developer"
+          }
+        },
+        "primaryButtonText": {
+          "type": "Text",
+          "config": {
+            "label": "Primary Button Text",
+            "placeholder": "Got a project?"
+          }
+        },
+        "primaryButtonLink": {
           "type": "Link",
           "config": {
-            "label": "Button Link",
+            "label": "Primary Button Link",
             "placeholder": "",
             "select": null
           }
         },
-        "buttonText": {
+        "secondaryButtonText": {
           "type": "Text",
           "config": {
-            "label": "Button Text",
-            "placeholder": ""
+            "label": "Secondary Button Text",
+            "placeholder": "My resume"
           }
         },
-        "backgroundImage": {
+        "secondaryButtonLink": {
+          "type": "Link",
+          "config": {
+            "label": "Secondary Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "profileImage": {
           "type": "Image",
           "config": {
-            "label": "Background Image",
+            "label": "Profile Image",
             "constraint": {},
             "thumbnails": []
           }
