@@ -1,0 +1,33 @@
+{
+  "id": "tech_stack",
+  "type": "SharedSlice",
+  "name": "TechStack",
+  "description": "A horizontal strip displaying technology names with hover effects",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "technologies": {
+          "type": "Group",
+          "config": {
+            "label": "Technologies",
+            "fields": {
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Technology Name",
+                  "placeholder": "e.g., HTML5, React, Node.js"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

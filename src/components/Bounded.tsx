@@ -27,7 +27,7 @@ export function Bounded({
         className,
       )}
     >
-      <div className="container mx-auto">{children}</div>
+      <div className="mx-auto max-w-7xl">{children}</div>
     </Comp>
   );
 }

@@ -36,7 +36,7 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
  */
 const About = ({ slice }: AboutProps) => {
     return (
-        <Bounded as="section" yPadding="lg">
+        <Bounded as="section" yPadding="base">
             <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
                 {/* Left Column: Timeline */}
                 <div className="lg:col-span-5">

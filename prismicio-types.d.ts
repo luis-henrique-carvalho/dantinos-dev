@@ -28,7 +28,8 @@ type PickContentRelationshipFieldData<
       TSubRelationship["customtypes"],
       TLang
     >;
-  } & { // Group
+  } & // Group
+  {
     [TGroup in Extract<
       TRelationship["fields"][number],
       | prismic.CustomTypeModelFetchGroupLevel1
@@ -40,7 +41,8 @@ type PickContentRelationshipFieldData<
           PickContentRelationshipFieldData<TGroup, TGroupData, TLang>
         >
       : never;
-  } & { // Other fields
+  } & // Other fields
+  {
     [TFieldKey in Extract<
       TRelationship["fields"][number],
       string
@@ -181,6 +183,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TechStackSlice
   | AboutSlice
   | HeroSlice
   | QuoteSlice
@@ -803,6 +806,68 @@ type QuoteSliceVariation = QuoteSliceDefault;
 export type QuoteSlice = prismic.SharedSlice<"quote", QuoteSliceVariation>;
 
 /**
+ * Item in *TechStack → Default → Primary → Technologies*
+ */
+export interface TechStackSliceDefaultPrimaryTechnologiesItem {
+  /**
+   * Technology Name field in *TechStack → Default → Primary → Technologies*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: e.g., HTML5, React, Node.js
+   * - **API ID Path**: tech_stack.default.primary.technologies[].name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *TechStack → Default → Primary*
+ */
+export interface TechStackSliceDefaultPrimary {
+  /**
+   * Technologies field in *TechStack → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_stack.default.primary.technologies[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  technologies: prismic.GroupField<
+    Simplify<TechStackSliceDefaultPrimaryTechnologiesItem>
+  >;
+}
+
+/**
+ * Default variation for TechStack Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TechStackSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TechStackSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TechStack*
+ */
+type TechStackSliceVariation = TechStackSliceDefault;
+
+/**
+ * TechStack Shared Slice
+ *
+ * - **API ID**: `tech_stack`
+ * - **Description**: A horizontal strip displaying technology names with hover effects
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TechStackSlice = prismic.SharedSlice<
+  "tech_stack",
+  TechStackSliceVariation
+>;
+
+/**
  * Primary content in *Text → Default → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -997,14 +1062,14 @@ declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 
   interface CreateWriteClient {
     (
       repositoryNameOrEndpoint: string,
-      options: prismic.WriteClientConfig
+      options: prismic.WriteClientConfig,
     ): prismic.WriteClient<AllDocumentTypes>;
   }
 
@@ -1051,6 +1116,11 @@ declare module "@prismicio/client" {
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
       QuoteSliceDefault,
+      TechStackSlice,
+      TechStackSliceDefaultPrimaryTechnologiesItem,
+      TechStackSliceDefaultPrimary,
+      TechStackSliceVariation,
+      TechStackSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTwoColumnsPrimary,

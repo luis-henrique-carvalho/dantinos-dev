@@ -1,0 +1,112 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"items": [],
+		"primary": {
+			"technologies": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "846b732a-3550-4cde-b493-d98bbfc27c39",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "HTML5"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "9f7d8e6c-4b2a-4f1e-8a3c-5d9e0f1a2b3c",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "CSS3"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "3c2d1e4f-5a6b-4c7d-8e9f-0a1b2c3d4e5f",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Javascript"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "6f5e4d3c-2b1a-4f9e-8d7c-6b5a4e3d2c1f",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Node.js"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "React"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "76f459ea-895b-492b-a19c-2f32655e1ed9",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Git"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "0af0f500-4d32-42ef-819d-e9378f2bf7f5",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Github"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"variation": "default"
+	}
+]
