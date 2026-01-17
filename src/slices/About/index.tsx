@@ -16,7 +16,6 @@ import {
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
 
-// Icon mapper
 const iconMap: Record<string, LucideIcon> = {
     Code,
     Smartphone,
