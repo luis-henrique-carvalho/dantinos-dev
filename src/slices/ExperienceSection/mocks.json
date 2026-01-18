@@ -1,0 +1,220 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": []
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Professional Experience"
+						}
+					}
+				]
+			},
+			"items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "523ec92a-ff5b-49b4-98b4-cb589e4150fc",
+						"value": [
+							[
+								"jobTitle",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Senior Frontend Engineer",
+									"type": "Text"
+								}
+							],
+							[
+								"company",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "TechFlow Solutions",
+									"type": "Text"
+								}
+							],
+							[
+								"dateRange",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2021 — Present",
+									"type": "Text"
+								}
+							],
+							[
+								"iconType",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "briefcase",
+									"type": "Select"
+								}
+							],
+							[
+								"achievements",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Led the migration of legacy monolith to micro-frontend architecture using Next.js and React."
+											}
+										},
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Improved core web vitals by 40%, resulting in a 15% increase in conversion rates."
+											}
+										},
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Mentored junior developers and established code quality standards across the team."
+											}
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6",
+						"value": [
+							[
+								"jobTitle",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Software Developer",
+									"type": "Text"
+								}
+							],
+							[
+								"company",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "CreativeStudio Agency",
+									"type": "Text"
+								}
+							],
+							[
+								"dateRange",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2018 — 2021",
+									"type": "Text"
+								}
+							],
+							[
+								"iconType",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "layers",
+									"type": "Select"
+								}
+							],
+							[
+								"achievements",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Developed high-fidelity custom websites for over 20+ enterprise clients including animations."
+											}
+										},
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Integrated headless CMS solutions to empower marketing teams with content control."
+											}
+										},
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Collaborated closely with UI/UX designers to implement pixel-perfect interfaces."
+											}
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "p7q8r9s0-t1u2-43v4-w5x6-y7z8a9b0c1d2",
+						"value": [
+							[
+								"jobTitle",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Junior Web Developer",
+									"type": "Text"
+								}
+							],
+							[
+								"company",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "StartUp Inc.",
+									"type": "Text"
+								}
+							],
+							[
+								"dateRange",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2016 — 2018",
+									"type": "Text"
+								}
+							],
+							[
+								"iconType",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "code-2",
+									"type": "Select"
+								}
+							],
+							[
+								"achievements",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Assisted in backend API development using Node.js and Express."
+											}
+										},
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Managed database migrations and optimization using PostgreSQL."
+											}
+										},
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Maintained legacy codebases and implemented critical security patches."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		}
+	}
+]

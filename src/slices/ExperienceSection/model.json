@@ -1,0 +1,78 @@
+{
+  "description": "Professional experience section container with heading and list of job experiences.",
+  "id": "experience_section",
+  "name": "ExperienceSection",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default experience section with heading and repeating experience items.",
+      "docURL": "...",
+      "id": "default",
+      "name": "Default",
+      "primary": {
+        "description": {
+          "config": {
+            "label": "Section Description",
+            "multi": "paragraph,strong,em,hyperlink",
+            "placeholder": "Optional section description"
+          },
+          "type": "StructuredText"
+        },
+        "heading": {
+          "config": {
+            "label": "Section Heading",
+            "placeholder": "Professional Experience",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "items": {
+          "config": {
+            "fields": {
+              "achievements": {
+                "config": {
+                  "label": "Achievements",
+                  "multi": "paragraph,list-item,strong,em,hyperlink",
+                  "placeholder": "List your key achievements"
+                },
+                "type": "StructuredText"
+              },
+              "company": {
+                "config": {
+                  "label": "Company Name",
+                  "placeholder": "TechFlow Solutions"
+                },
+                "type": "Text"
+              },
+              "dateRange": {
+                "config": {
+                  "label": "Date Range",
+                  "placeholder": "2021 — Present"
+                },
+                "type": "Text"
+              },
+              "iconType": {
+                "config": {
+                  "label": "Icon Type",
+                  "options": ["briefcase", "layers", "code-2", "star", "zap"]
+                },
+                "type": "Select"
+              },
+              "jobTitle": {
+                "config": {
+                  "label": "Job Title",
+                  "placeholder": "Senior Frontend Engineer"
+                },
+                "type": "Text"
+              }
+            },
+            "label": "Experience Items"
+          },
+          "type": "Group"
+        }
+      },
+      "version": "sktwi1xtmkfgx8626",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -297,8 +297,8 @@
     </section>
 
     <!-- Professional Experience (ExperienceSlice) -->
-    <section id="experience" class="py-24 bg-[#0B0F17]">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="bg-[#0B0F17] pt-24 pb-24" id="experience">
+      <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
         <h2 class="text-4xl font-semibold text-white tracking-tight mb-16">
           Professional Experience
         </h2>
@@ -310,39 +310,56 @@
           ></div>
 
           <!-- Job 1 -->
-          <div class="relative z-10 flex flex-col md:flex-row gap-8 group">
+          <div
+            class="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 group"
+          >
             <div class="flex-shrink-0">
               <div
-                class="w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-accent group-hover:text-accent transition-colors shadow-lg"
+                class="w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-accent group-hover:text-accent transition-colors shadow-lg relative z-20"
               >
-                <i data-lucide="briefcase" class="w-6 h-6"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-lucide="briefcase"
+                  class="lucide lucide-briefcase w-6 h-6 text-current"
+                >
+                  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                </svg>
               </div>
             </div>
-            <div class="flex-grow pt-2">
+            <!-- Added padding-left for mobile to create timeline indentation -->
+            <div class="flex-grow pt-0 md:pt-2 pl-16 md:pl-0">
               <div
-                class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4"
+                class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-4"
               >
-                <div>
-                  <h3 class="text-xl font-semibold text-white">
+                <div class="flex flex-col">
+                  <h3 class="text-2xl font-semibold text-white tracking-tight">
                     Senior Frontend Engineer
                   </h3>
-                  <p class="text-accent text-sm font-medium mt-0.5">
-                    TechFlow Solutions
-                  </p>
+                  <p class="text-accent font-medium mt-1">TechFlow Solutions</p>
                 </div>
-                <span
-                  class="font-mono text-xs text-slate-500 bg-slate-900/50 border border-slate-800 px-3 py-1 rounded-full"
-                  >2021 — Present</span
+                <div
+                  class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50 text-slate-400 text-xs font-mono mt-3 md:mt-0 w-fit"
                 >
+                  2021 — Present
+                </div>
               </div>
               <ul
-                class="space-y-3 text-slate-400 leading-relaxed list-disc list-inside marker:text-slate-700"
+                class="space-y-3 text-slate-400 leading-relaxed list-disc list-inside marker:text-slate-600"
               >
-                <li>
+                <li class="">
                   Led the migration of legacy monolith to micro-frontend
                   architecture using Next.js and React.
                 </li>
-                <li>
+                <li class="">
                   Improved core web vitals by 40%, resulting in a 15% increase
                   in conversion rates.
                 </li>
@@ -355,33 +372,58 @@
           </div>
 
           <!-- Job 2 -->
-          <div class="relative z-10 flex flex-col md:flex-row gap-8 group">
+          <div
+            class="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 group"
+          >
             <div class="flex-shrink-0">
               <div
-                class="w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-accent group-hover:text-accent transition-colors shadow-lg"
+                class="w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-accent group-hover:text-accent transition-colors shadow-lg relative z-20"
               >
-                <i data-lucide="layers" class="w-6 h-6"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-lucide="layers"
+                  class="lucide lucide-layers w-6 h-6 text-current"
+                >
+                  <path
+                    d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
+                  ></path>
+                  <path
+                    d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"
+                  ></path>
+                  <path
+                    d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"
+                  ></path>
+                </svg>
               </div>
             </div>
-            <div class="flex-grow pt-2">
+            <div class="flex-grow pt-0 md:pt-2 pl-16 md:pl-0">
               <div
-                class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4"
+                class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-4"
               >
-                <div>
-                  <h3 class="text-xl font-semibold text-white">
+                <div class="flex flex-col">
+                  <h3 class="text-2xl font-semibold text-white tracking-tight">
                     Software Developer
                   </h3>
-                  <p class="text-accent text-sm font-medium mt-0.5">
+                  <p class="text-accent font-medium mt-1">
                     CreativeStudio Agency
                   </p>
                 </div>
-                <span
-                  class="font-mono text-xs text-slate-500 bg-slate-900/50 border border-slate-800 px-3 py-1 rounded-full"
-                  >2018 — 2021</span
+                <div
+                  class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50 text-slate-400 text-xs font-mono mt-3 md:mt-0 w-fit"
                 >
+                  2018 — 2021
+                </div>
               </div>
               <ul
-                class="space-y-3 text-slate-400 leading-relaxed list-disc list-inside marker:text-slate-700"
+                class="space-y-3 text-slate-400 leading-relaxed list-disc list-inside marker:text-slate-600"
               >
                 <li>
                   Developed high-fidelity custom websites for over 20+
@@ -400,33 +442,50 @@
           </div>
 
           <!-- Job 3 -->
-          <div class="relative z-10 flex flex-col md:flex-row gap-8 group">
+          <div
+            class="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 group"
+          >
             <div class="flex-shrink-0">
               <div
-                class="w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-accent group-hover:text-accent transition-colors shadow-lg"
+                class="w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-accent group-hover:text-accent transition-colors shadow-lg relative z-20"
               >
-                <i data-lucide="code-2" class="w-6 h-6"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-lucide="code-2"
+                  class="lucide lucide-code-2 w-6 h-6 text-current"
+                >
+                  <path d="m18 16 4-4-4-4"></path>
+                  <path d="m6 8-4 4 4 4"></path>
+                  <path d="m14.5 4-5 16"></path>
+                </svg>
               </div>
             </div>
-            <div class="flex-grow pt-2">
+            <div class="flex-grow pt-0 md:pt-2 pl-16 md:pl-0">
               <div
-                class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4"
+                class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-4"
               >
-                <div>
-                  <h3 class="text-xl font-semibold text-white">
+                <div class="flex flex-col">
+                  <h3 class="text-2xl font-semibold text-white tracking-tight">
                     Junior Web Developer
                   </h3>
-                  <p class="text-accent text-sm font-medium mt-0.5">
-                    StartUp Inc.
-                  </p>
+                  <p class="text-accent font-medium mt-1">StartUp Inc.</p>
                 </div>
-                <span
-                  class="font-mono text-xs text-slate-500 bg-slate-900/50 border border-slate-800 px-3 py-1 rounded-full"
-                  >2016 — 2018</span
+                <div
+                  class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50 text-slate-400 text-xs font-mono mt-3 md:mt-0 w-fit"
                 >
+                  2016 — 2018
+                </div>
               </div>
               <ul
-                class="space-y-3 text-slate-400 leading-relaxed list-disc list-inside marker:text-slate-700"
+                class="space-y-3 text-slate-400 leading-relaxed list-disc list-inside marker:text-slate-600"
               >
                 <li>
                   Assisted in backend API development using Node.js and Express.

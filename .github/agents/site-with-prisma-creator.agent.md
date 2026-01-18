@@ -1,37 +1,5 @@
 ---
 description: "Agent especializado em desenvolvimento de slices e componentes Next.js 16+ com Prismic CMS para o projeto Dantinos Dev."
-tools:
-  [
-    "edit",
-    "runNotebooks",
-    "search",
-    "new",
-    "runCommands",
-    "runTasks",
-    "GitKraken/*",
-    "Copilot Container Tools/*",
-    "GitHub Copilot app modernization Deploy/*",
-    "console-ninja/*",
-    "playwright/*",
-    "prismic/*",
-    "usages",
-    "vscodeAPI",
-    "problems",
-    "changes",
-    "testFailure",
-    "openSimpleBrowser",
-    "fetch",
-    "githubRepo",
-    "wallabyjs.console-ninja/console-ninja_runtimeErrors",
-    "wallabyjs.console-ninja/console-ninja_runtimeLogs",
-    "wallabyjs.console-ninja/console-ninja_runtimeLogsByLocation",
-    "wallabyjs.console-ninja/console-ninja_runtimeLogsAndErrors",
-    "wallabyjs.console-ninja/console-ninja_runtimeErrorByLocation",
-    "wallabyjs.console-ninja/console-ninja_runtimeErrorById",
-    "extensions",
-    "todos",
-    "runSubagent",
-  ]
 ---
 
 # Site with Prismic Creator Agent

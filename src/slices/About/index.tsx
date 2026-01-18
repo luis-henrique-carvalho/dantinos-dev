@@ -105,7 +105,7 @@ const About = ({ slice }: AboutProps) => {
 
                     {/* Stats Grid */}
                     {slice.primary.stats && slice.primary.stats.length > 0 && (
-                        <div className="mt-12 grid grid-cols-1 gap-8 border-t border-slate-800 pt-12 sm:grid-cols-3">
+                        <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-slate-800">
                             {slice.primary.stats.map((stat, index) => (
                                 <div key={index}>
                                     {isFilled.keyText(stat.value) && (

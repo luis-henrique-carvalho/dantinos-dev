@@ -183,6 +183,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ExperienceSectionSlice
   | TechStackSlice
   | AboutSlice
   | HeroSlice
@@ -452,6 +453,130 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *ExperienceSection → Default → Primary → Experience Items*
+ */
+export interface ExperienceSectionSliceDefaultPrimaryItemsItem {
+  /**
+   * Achievements field in *ExperienceSection → Default → Primary → Experience Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: List your key achievements
+   * - **API ID Path**: experience_section.default.primary.items[].achievements
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  achievements: prismic.RichTextField;
+
+  /**
+   * Company Name field in *ExperienceSection → Default → Primary → Experience Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: TechFlow Solutions
+   * - **API ID Path**: experience_section.default.primary.items[].company
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  company: prismic.KeyTextField;
+
+  /**
+   * Date Range field in *ExperienceSection → Default → Primary → Experience Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 2021 — Present
+   * - **API ID Path**: experience_section.default.primary.items[].dateRange
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  dateRange: prismic.KeyTextField;
+
+  /**
+   * Icon Type field in *ExperienceSection → Default → Primary → Experience Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience_section.default.primary.items[].iconType
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  iconType: prismic.SelectField<
+    "briefcase" | "layers" | "code-2" | "star" | "zap"
+  >;
+
+  /**
+   * Job Title field in *ExperienceSection → Default → Primary → Experience Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Senior Frontend Engineer
+   * - **API ID Path**: experience_section.default.primary.items[].jobTitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  jobTitle: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ExperienceSection → Default → Primary*
+ */
+export interface ExperienceSectionSliceDefaultPrimary {
+  /**
+   * Section Description field in *ExperienceSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Optional section description
+   * - **API ID Path**: experience_section.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Section Heading field in *ExperienceSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Professional Experience
+   * - **API ID Path**: experience_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Experience Items field in *ExperienceSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience_section.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  items: prismic.GroupField<
+    Simplify<ExperienceSectionSliceDefaultPrimaryItemsItem>
+  >;
+}
+
+/**
+ * Default variation for ExperienceSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default experience section with heading and repeating experience items.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ExperienceSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ExperienceSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ExperienceSection*
+ */
+type ExperienceSectionSliceVariation = ExperienceSectionSliceDefault;
+
+/**
+ * ExperienceSection Shared Slice
+ *
+ * - **API ID**: `experience_section`
+ * - **Description**: Professional experience section container with heading and list of job experiences.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ExperienceSectionSlice = prismic.SharedSlice<
+  "experience_section",
+  ExperienceSectionSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -1097,6 +1222,11 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      ExperienceSectionSlice,
+      ExperienceSectionSliceDefaultPrimaryItemsItem,
+      ExperienceSectionSliceDefaultPrimary,
+      ExperienceSectionSliceVariation,
+      ExperienceSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
