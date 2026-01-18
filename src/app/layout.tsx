@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { PrismicPreview } from "@prismicio/next";
 import { asText } from "@prismicio/client";
 
@@ -22,6 +23,21 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        )}
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            src="//unpkg.com/@react-grab/visual-edit/dist/client.global.js"
+            strategy="lazyOnload"
+          />
+        )}
+      </head>
       <body className="overflow-x-hidden antialiased bg-background text-foreground min-h-screen flex flex-col">
         <Header settings={settings} navigation={navigation} />
         <main className="flex-1 w-full">
