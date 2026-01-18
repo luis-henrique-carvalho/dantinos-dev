@@ -2,6 +2,7 @@ import { FC } from "react";
 import { type Content, isFilled } from "@prismicio/client";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import type { SliceComponentProps } from "@prismicio/react";
+import { Code2, ChevronRight } from "lucide-react";
 
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -15,7 +16,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
               <span className="block">
                 {slice.primary.greeting}
-                <span className="text-[#FF6B6B]">.</span>
+                <span className="text-accent">.</span>
               </span>
               <span className="mt-2 block text-2xl font-medium text-slate-400 sm:text-3xl lg:text-4xl">
                 Sou {slice.primary.name}
@@ -65,40 +66,13 @@ const Hero: FC<HeroProps> = ({ slice }) => {
                 className="absolute right-10 top-0 animate-pulse text-slate-700 hidden md:block"
                 aria-hidden="true"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-12 w-12"
-                >
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
+                <Code2 className="h-12 w-12" />
               </div>
               <div
                 className="absolute bottom-10 left-0 text-[#FF6B6B] opacity-50 hidden md:block"
                 aria-hidden="true"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-16 w-16"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
+                <ChevronRight className="h-16 w-16" />
               </div>
             </div>
           </div>
