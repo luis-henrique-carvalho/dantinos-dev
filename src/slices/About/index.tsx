@@ -1,3 +1,5 @@
+"use client";
+
 import { type Content, isFilled } from "@prismicio/client";
 import type { SliceComponentProps } from "@prismicio/react";
 import {
@@ -12,6 +14,7 @@ import {
     Cloud,
     type LucideIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
@@ -34,17 +37,111 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
  * Component for "About" Slices.
  */
 const About = ({ slice }: AboutProps) => {
+    // Container animation with stagger effect
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+            },
+        },
+    };
+
+    // Service items animation
+    const serviceItemVariants = {
+        hidden: {
+            opacity: 0,
+            x: -20,
+            y: 10,
+        },
+        visible: {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut" as const,
+            },
+        },
+    };
+
+    // Heading animation
+    const headingVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut" as const,
+            },
+        },
+    };
+
+    // Description animation
+    const descriptionVariants = {
+        hidden: { opacity: 0, y: 10 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut" as const,
+                delay: 0.1,
+            },
+        },
+    };
+
+    // Stats animation
+    const statsContainerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.4,
+            },
+        },
+    };
+
+    const statItemVariants = {
+        hidden: { opacity: 0, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.4,
+                ease: "easeOut" as const,
+            },
+        },
+    };
     return (
         <Bounded as="section" yPadding="base">
             <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
                 {/* Left Column: Timeline */}
                 <div className="lg:col-span-5">
                     {slice.primary.services && slice.primary.services.length > 0 && (
-                        <div className="relative space-y-12 border-l-2 border-slate-800 pl-8">
+                        <motion.div
+                            className="relative space-y-12 border-l-2 border-slate-800 pl-8"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
                             {slice.primary.services.map((service, index) => {
                                 const Icon = iconMap[service.icon as string];
                                 return (
-                                    <div key={index} className="group relative">
+                                    <motion.div
+                                        key={index}
+                                        className="group relative"
+                                        variants={serviceItemVariants}
+                                        whileHover={{
+                                            x: 8,
+                                            transition: { duration: 0.2 },
+                                        }}
+                                    >
                                         {/* Timeline dot */}
                                         <span className="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-[#0f141e] bg-[#ff6b6b] transition-transform group-hover:scale-125"></span>
 
@@ -68,17 +165,23 @@ const About = ({ slice }: AboutProps) => {
                                                 )}
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
-                        </div>
+                        </motion.div>
                     )}
                 </div>
 
                 {/* Right Column: About + Stats */}
                 <div className="lg:col-span-7">
                     {isFilled.richText(slice.primary.heading) && (
-                        <div className="mb-8">
+                        <motion.div
+                            className="mb-8"
+                            variants={headingVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
                             <PrismicRichText
                                 field={slice.primary.heading}
                                 components={{
@@ -94,20 +197,32 @@ const About = ({ slice }: AboutProps) => {
                                     ),
                                 }}
                             />
-                        </div>
+                        </motion.div>
                     )}
 
                     {isFilled.richText(slice.primary.description) && (
-                        <div className="space-y-6 text-lg leading-relaxed text-slate-400">
+                        <motion.div
+                            className="space-y-6 text-lg leading-relaxed text-slate-400"
+                            variants={descriptionVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
                             <PrismicRichText field={slice.primary.description} />
-                        </div>
+                        </motion.div>
                     )}
 
                     {/* Stats Grid */}
                     {slice.primary.stats && slice.primary.stats.length > 0 && (
-                        <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-slate-800">
+                        <motion.div
+                            className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-slate-800"
+                            variants={statsContainerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
                             {slice.primary.stats.map((stat, index) => (
-                                <div key={index}>
+                                <motion.div key={index} variants={statItemVariants}>
                                     {isFilled.keyText(stat.value) && (
                                         <div className="text-4xl font-semibold text-white">
                                             {stat.value.split(/([+%])/).map((part, i) =>
@@ -126,9 +241,9 @@ const About = ({ slice }: AboutProps) => {
                                             {stat.label}
                                         </div>
                                     )}
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     )}
                 </div>
             </div>
