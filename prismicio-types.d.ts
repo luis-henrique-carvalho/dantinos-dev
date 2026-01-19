@@ -191,7 +191,8 @@ type PageDocumentDataSlicesSlice =
   | TextSlice
   | ImageSlice
   | ImageCardsSlice
-  | TextWithImageSlice;
+  | TextWithImageSlice
+  | SkillsCertificationsSlice;
 
 /**
  * Content for Page documents
@@ -931,6 +932,176 @@ type QuoteSliceVariation = QuoteSliceDefault;
 export type QuoteSlice = prismic.SharedSlice<"quote", QuoteSliceVariation>;
 
 /**
+ * Item in *SkillsCertifications → Default → Primary → Skill Categories → Skills*
+ */
+export interface SkillsCertificationsSliceDefaultPrimarySkillCategoriesSkillsItem {
+  /**
+   * Skill Name field in *SkillsCertifications → Default → Primary → Skill Categories → Skills*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: React.js
+   * - **API ID Path**: skills_certifications.default.primary.skillCategories[].skills[].skillName
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  skillName: prismic.KeyTextField;
+}
+
+/**
+ * Item in *SkillsCertifications → Default → Primary → Skill Categories*
+ */
+export interface SkillsCertificationsSliceDefaultPrimarySkillCategoriesItem {
+  /**
+   * Category Name field in *SkillsCertifications → Default → Primary → Skill Categories*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills_certifications.default.primary.skillCategories[].category_name
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  category_name: prismic.SelectField<
+    "Frontend" | "Backend & Cloud" | "Tools & Design"
+  >;
+
+  /**
+   * Skills field in *SkillsCertifications → Default → Primary → Skill Categories*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills_certifications.default.primary.skillCategories[].skills[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  skills: prismic.NestedGroupField<
+    Simplify<SkillsCertificationsSliceDefaultPrimarySkillCategoriesSkillsItem>
+  >;
+}
+
+/**
+ * Item in *SkillsCertifications → Default → Primary → Certifications*
+ */
+export interface SkillsCertificationsSliceDefaultPrimaryCertificationsItem {
+  /**
+   * Certification Name field in *SkillsCertifications → Default → Primary → Certifications*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: AWS Certified Developer
+   * - **API ID Path**: skills_certifications.default.primary.certifications[].certificationName
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  certificationName: prismic.KeyTextField;
+
+  /**
+   * Issuer field in *SkillsCertifications → Default → Primary → Certifications*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Amazon Web Services
+   * - **API ID Path**: skills_certifications.default.primary.certifications[].issuer
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  issuer: prismic.KeyTextField;
+
+  /**
+   * Year field in *SkillsCertifications → Default → Primary → Certifications*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 2023
+   * - **API ID Path**: skills_certifications.default.primary.certifications[].year
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  year: prismic.KeyTextField;
+
+  /**
+   * Icon Type field in *SkillsCertifications → Default → Primary → Certifications*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills_certifications.default.primary.certifications[].iconType
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  iconType: prismic.SelectField<
+    "award" | "shield-check" | "database" | "certificate" | "star"
+  >;
+}
+
+/**
+ * Primary content in *SkillsCertifications → Default → Primary*
+ */
+export interface SkillsCertificationsSliceDefaultPrimary {
+  /**
+   * Skills Section Heading field in *SkillsCertifications → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Technical Skills
+   * - **API ID Path**: skills_certifications.default.primary.skillsHeading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  skillsHeading: prismic.RichTextField;
+
+  /**
+   * Skill Categories field in *SkillsCertifications → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills_certifications.default.primary.skillCategories[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  skillCategories: prismic.GroupField<
+    Simplify<SkillsCertificationsSliceDefaultPrimarySkillCategoriesItem>
+  >;
+
+  /**
+   * Certifications Section Heading field in *SkillsCertifications → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Certifications
+   * - **API ID Path**: skills_certifications.default.primary.certificationsHeading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  certificationsHeading: prismic.RichTextField;
+
+  /**
+   * Certifications field in *SkillsCertifications → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills_certifications.default.primary.certifications[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  certifications: prismic.GroupField<
+    Simplify<SkillsCertificationsSliceDefaultPrimaryCertificationsItem>
+  >;
+}
+
+/**
+ * Default variation for SkillsCertifications Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default skills and certifications section with skill categories and certification cards.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SkillsCertificationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SkillsCertificationsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SkillsCertifications*
+ */
+type SkillsCertificationsSliceVariation = SkillsCertificationsSliceDefault;
+
+/**
+ * SkillsCertifications Shared Slice
+ *
+ * - **API ID**: `skills_certifications`
+ * - **Description**: Technical skills and certifications showcase with categories and achievement cards.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SkillsCertificationsSlice = prismic.SharedSlice<
+  "skills_certifications",
+  SkillsCertificationsSliceVariation
+>;
+
+/**
  * Item in *TechStack → Default → Primary → Technologies*
  */
 export interface TechStackSliceDefaultPrimaryTechnologiesItem {
@@ -1246,6 +1417,13 @@ declare module "@prismicio/client" {
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
       QuoteSliceDefault,
+      SkillsCertificationsSlice,
+      SkillsCertificationsSliceDefaultPrimarySkillCategoriesSkillsItem,
+      SkillsCertificationsSliceDefaultPrimarySkillCategoriesItem,
+      SkillsCertificationsSliceDefaultPrimaryCertificationsItem,
+      SkillsCertificationsSliceDefaultPrimary,
+      SkillsCertificationsSliceVariation,
+      SkillsCertificationsSliceDefault,
       TechStackSlice,
       TechStackSliceDefaultPrimaryTechnologiesItem,
       TechStackSliceDefaultPrimary,

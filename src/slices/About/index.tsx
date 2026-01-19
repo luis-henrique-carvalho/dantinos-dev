@@ -112,7 +112,7 @@ const About = ({ slice }: AboutProps) => {
                                         <div className="text-4xl font-semibold text-white">
                                             {stat.value.split(/([+%])/).map((part, i) =>
                                                 part.match(/[+%]/) ? (
-                                                    <span key={i} className="text-[#ff6b6b]">
+                                                    <span key={i} className="text-accent">
                                                         {part}
                                                     </span>
                                                 ) : (

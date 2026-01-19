@@ -1,0 +1,112 @@
+{
+    "description": "Technical skills and certifications showcase with categories and achievement cards.",
+    "id": "skills_certifications",
+    "name": "SkillsCertifications",
+    "type": "SharedSlice",
+    "variations": [
+        {
+            "description": "Default skills and certifications section with skill categories and certification cards.",
+            "docURL": "...",
+            "id": "default",
+            "name": "Default",
+            "primary": {
+                "skillsHeading": {
+                    "config": {
+                        "label": "Skills Section Heading",
+                        "placeholder": "Technical Skills",
+                        "single": "heading2"
+                    },
+                    "type": "StructuredText"
+                },
+                "skillCategories": {
+                    "config": {
+                        "fields": {
+                            "category_name": {
+                                "type": "Select",
+                                "config": {
+                                    "label": "Category Name",
+                                    "placeholder": "",
+                                    "options": [
+                                        "Frontend",
+                                        "Backend & Cloud",
+                                        "Tools & Design"
+                                    ]
+                                }
+                            },
+                            "skills": {
+                                "config": {
+                                    "fields": {
+                                        "skillName": {
+                                            "config": {
+                                                "label": "Skill Name",
+                                                "placeholder": "React.js"
+                                            },
+                                            "type": "Text"
+                                        }
+                                    },
+                                    "label": "Skills"
+                                },
+                                "type": "Group"
+                            }
+                        },
+                        "label": "Skill Categories"
+                    },
+                    "type": "Group"
+                },
+                "certificationsHeading": {
+                    "config": {
+                        "label": "Certifications Section Heading",
+                        "placeholder": "Certifications",
+                        "single": "heading2"
+                    },
+                    "type": "StructuredText"
+                },
+                "certifications": {
+                    "config": {
+                        "fields": {
+                            "certificationName": {
+                                "config": {
+                                    "label": "Certification Name",
+                                    "placeholder": "AWS Certified Developer"
+                                },
+                                "type": "Text"
+                            },
+                            "issuer": {
+                                "config": {
+                                    "label": "Issuer",
+                                    "placeholder": "Amazon Web Services"
+                                },
+                                "type": "Text"
+                            },
+                            "year": {
+                                "config": {
+                                    "label": "Year",
+                                    "placeholder": "2023"
+                                },
+                                "type": "Text"
+                            },
+                            "iconType": {
+                                "config": {
+                                    "label": "Icon Type",
+                                    "options": [
+                                        "award",
+                                        "shield-check",
+                                        "database",
+                                        "certificate",
+                                        "star"
+                                    ]
+                                },
+                                "type": "Select"
+                            }
+                        },
+                        "label": "Certifications"
+                    },
+                    "type": "Group"
+                }
+            },
+            "version": "initial",
+            "imageUrl": "",
+            "items": {}
+        }
+    ]
+}

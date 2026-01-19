@@ -1,0 +1,117 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"skillsHeading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Unusual"
+						}
+					}
+				]
+			},
+			"skillCategories": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skills",
+								{
+									"__TYPE__": "GroupContentType",
+									"value": [
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"skillName",
+													{
+														"__TYPE__": "FieldContent",
+														"value": "clean",
+														"type": "Text"
+													}
+												]
+											]
+										}
+									]
+								}
+							],
+							[
+								"category_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Frontend",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			},
+			"certificationsHeading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Machinery"
+						}
+					}
+				]
+			},
+			"certifications": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"certificationName",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "breathing",
+									"type": "Text"
+								}
+							],
+							[
+								"issuer",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "village",
+									"type": "Text"
+								}
+							],
+							[
+								"year",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "settlers",
+									"type": "Text"
+								}
+							],
+							[
+								"iconType",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "shield-check",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

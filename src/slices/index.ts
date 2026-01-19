@@ -9,6 +9,7 @@ export const components = {
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
   quote: dynamic(() => import("./Quote")),
+  skills_certifications: dynamic(() => import("./SkillsCertifications")),
   tech_stack: dynamic(() => import("./TechStack")),
   text: dynamic(() => import("./Text")),
   text_with_image: dynamic(() => import("./TextWithImage")),
