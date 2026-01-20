@@ -6,6 +6,7 @@ type BoundedProps = {
   yPadding?: "sm" | "base" | "lg";
   collapsible?: boolean;
   fullHeight?: boolean;
+  id?: string;
   className?: string;
   children?: ReactNode;
 };
@@ -14,12 +15,14 @@ export function Bounded({
   as: Comp = "div",
   yPadding = "base",
   collapsible = true,
+  id,
   className,
   children,
 }: BoundedProps) {
   return (
     <Comp
       data-collapsible={collapsible}
+      id={id}
       className={cn(
         "px-6 md:px-8 w-full flex flex-col justify-center",
         yPadding === "sm" && "py-8 md:py-10",

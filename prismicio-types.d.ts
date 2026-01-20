@@ -140,14 +140,40 @@ export interface NavigationDocumentDataLinksItem {
   label: prismic.RichTextField;
 
   /**
-   * Link field in *Navigation → Links*
+   * Link Type field in *Navigation → Links*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select link type
+   * - **API ID Path**: navigation.links[].link_type
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  link_type: prismic.SelectField<"page" | "section">;
+
+  /**
+   * Page Link field in *Navigation → Links*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: Link for navigation item
-   * - **API ID Path**: navigation.links[].link
+   * - **Placeholder**: Link to page (blog, about, etc)
+   * - **API ID Path**: navigation.links[].page_link
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  page_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Section ID field in *Navigation → Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: e.g., featured-projects, about, skills
+   * - **API ID Path**: navigation.links[].section_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_id: prismic.KeyTextField;
 }
 
 /**
@@ -183,6 +209,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FeaturedProjectsSlice
   | ExperienceSectionSlice
   | TechStackSlice
   | AboutSlice
@@ -577,6 +604,157 @@ type ExperienceSectionSliceVariation = ExperienceSectionSliceDefault;
 export type ExperienceSectionSlice = prismic.SharedSlice<
   "experience_section",
   ExperienceSectionSliceVariation
+>;
+
+/**
+ * Item in *FeaturedProjects → Default → Primary → Projects → Tech Stack Tags*
+ */
+export interface FeaturedProjectsSliceDefaultPrimaryProjectsTechStackItem {
+  /**
+   * Tag field in *FeaturedProjects → Default → Primary → Projects → Tech Stack Tags*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: React
+   * - **API ID Path**: featured_projects.default.primary.projects[].tech_stack[].tag
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tag: prismic.KeyTextField;
+}
+
+/**
+ * Item in *FeaturedProjects → Default → Primary → Projects*
+ */
+export interface FeaturedProjectsSliceDefaultPrimaryProjectsItem {
+  /**
+   * Project Title field in *FeaturedProjects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Project Name
+   * - **API ID Path**: featured_projects.default.primary.projects[].project_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project_title: prismic.RichTextField;
+
+  /**
+   * Project Description field in *FeaturedProjects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Describe the project...
+   * - **API ID Path**: featured_projects.default.primary.projects[].project_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project_description: prismic.RichTextField;
+
+  /**
+   * Project Image field in *FeaturedProjects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_projects.default.primary.projects[].project_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  project_image: prismic.ImageField<never>;
+
+  /**
+   * Tech Stack Tags field in *FeaturedProjects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_projects.default.primary.projects[].tech_stack[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  tech_stack: prismic.NestedGroupField<
+    Simplify<FeaturedProjectsSliceDefaultPrimaryProjectsTechStackItem>
+  >;
+
+  /**
+   * GitHub Link field in *FeaturedProjects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_projects.default.primary.projects[].github_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  github_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Live Demo Link field in *FeaturedProjects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_projects.default.primary.projects[].demo_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  demo_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *FeaturedProjects → Default → Primary*
+ */
+export interface FeaturedProjectsSliceDefaultPrimary {
+  /**
+   * Section Title field in *FeaturedProjects → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Projects
+   * - **API ID Path**: featured_projects.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Projects field in *FeaturedProjects → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_projects.default.primary.projects[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  projects: prismic.GroupField<
+    Simplify<FeaturedProjectsSliceDefaultPrimaryProjectsItem>
+  >;
+}
+
+/**
+ * Default variation for FeaturedProjects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeaturedProjectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedProjectsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeaturedProjects*
+ */
+type FeaturedProjectsSliceVariation = FeaturedProjectsSliceDefault;
+
+/**
+ * FeaturedProjects Shared Slice
+ *
+ * - **API ID**: `featured_projects`
+ * - **Description**: Featured projects section with alternating layouts and multiple visual representations
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeaturedProjectsSlice = prismic.SharedSlice<
+  "featured_projects",
+  FeaturedProjectsSliceVariation
 >;
 
 /**
@@ -1398,6 +1576,12 @@ declare module "@prismicio/client" {
       ExperienceSectionSliceDefaultPrimary,
       ExperienceSectionSliceVariation,
       ExperienceSectionSliceDefault,
+      FeaturedProjectsSlice,
+      FeaturedProjectsSliceDefaultPrimaryProjectsTechStackItem,
+      FeaturedProjectsSliceDefaultPrimaryProjectsItem,
+      FeaturedProjectsSliceDefaultPrimary,
+      FeaturedProjectsSliceVariation,
+      FeaturedProjectsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

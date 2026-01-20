@@ -1,0 +1,89 @@
+{
+  "id": "featured_projects",
+  "type": "SharedSlice",
+  "name": "FeaturedProjects",
+  "description": "Featured projects section with alternating layouts and multiple visual representations",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Title",
+            "single": "heading2",
+            "placeholder": "Projects"
+          }
+        },
+        "projects": {
+          "type": "Group",
+          "config": {
+            "label": "Projects",
+            "fields": {
+              "project_title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Project Title",
+                  "single": "heading3",
+                  "placeholder": "Project Name"
+                }
+              },
+              "project_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Project Description",
+                  "multi": "paragraph,strong,em,hyperlink",
+                  "placeholder": "Describe the project..."
+                }
+              },
+              "project_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Project Image",
+                  "constraint": {}
+                }
+              },
+              "tech_stack": {
+                "type": "Group",
+                "config": {
+                  "label": "Tech Stack Tags",
+                  "fields": {
+                    "tag": {
+                      "type": "Text",
+                      "config": {
+                        "label": "Tag",
+                        "placeholder": "React"
+                      }
+                    }
+                  }
+                }
+              },
+              "github_link": {
+                "type": "Link",
+                "config": {
+                  "label": "GitHub Link",
+                  "select": "web",
+                  "allowText": true
+                }
+              },
+              "demo_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Live Demo Link",
+                  "select": "web",
+                  "allowText": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

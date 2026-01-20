@@ -1,0 +1,425 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"projects": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"project_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"content": {
+												"text": "Battleship"
+											},
+											"type": "heading3"
+										}
+									]
+								}
+							],
+							[
+								"project_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"content": {
+												"text": "Used components of Javascript to implement basic data structures through the game of Battleship. Used a terminal to display ships and tracked where ships are hit or missed."
+											},
+											"type": "paragraph"
+										}
+									]
+								}
+							],
+							[
+								"project_image",
+								{
+									"alt": "Battleship game code",
+									"edit": {
+										"background": "transparent",
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"zoom": 1
+									},
+									"height": 3899,
+									"origin": {
+										"height": 3899,
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+										"width": 5848
+									},
+									"url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+									"width": 5848,
+									"credits": null,
+									"__TYPE__": "ImageContent"
+								}
+							],
+							[
+								"tech_stack",
+								{
+									"__TYPE__": "GroupContentType",
+									"value": [
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "HTML"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "CSS"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "Javascript"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "Node.js"
+													}
+												]
+											]
+										}
+									]
+								}
+							],
+							[
+								"github_link",
+								{
+									"key": "c3715a38-6bf1-4484-8cba-085a11a453f9",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://github.com/username/battleship",
+										"text": "View Github"
+									}
+								}
+							],
+							[
+								"demo_link",
+								{
+									"key": "e6f78901-2345-4678-9abc-def678901234",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://battleship-demo.example.com",
+										"text": "View project"
+									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"project_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"content": {
+												"text": "Movie Titles API"
+											},
+											"type": "heading3"
+										}
+									]
+								}
+							],
+							[
+								"project_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"content": {
+												"text": "Uses a public movie API to build a collection movie list that sorts from A to Z or vice versa. It also counts how many movies in each container and adds user's favorite movies into another container."
+											},
+											"type": "paragraph"
+										}
+									]
+								}
+							],
+							[
+								"project_image",
+								{
+									"alt": "Movie App interface showing film collection",
+									"edit": {
+										"background": "transparent",
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"zoom": 1
+									},
+									"height": 667,
+									"origin": {
+										"height": 667,
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+										"width": 1000
+									},
+									"url": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000&auto=format&fit=crop",
+									"width": 1000,
+									"credits": null,
+									"__TYPE__": "ImageContent"
+								}
+							],
+							[
+								"tech_stack",
+								{
+									"__TYPE__": "GroupContentType",
+									"value": [
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "React"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "API"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "Tailwind"
+													}
+												]
+											]
+										}
+									]
+								}
+							],
+							[
+								"github_link",
+								{
+									"key": "34567890-1234-4567-8abc-def123456789",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://github.com/username/movie-api",
+										"text": "View Github"
+									}
+								}
+							],
+							[
+								"demo_link",
+								{
+									"key": "45678901-2345-4678-9abc-def234567890",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://movie-api-demo.example.com",
+										"text": "View project"
+									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"project_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"content": {
+												"text": "SaaS Landing Page"
+											},
+											"type": "heading3"
+										}
+									]
+								}
+							],
+							[
+								"project_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"content": {
+												"text": "Used semantic HTML concepts such as creating a form and a basic skeleton. It also used components of both the grid and flexbox elements to produce a landing page optimized for conversion."
+											},
+											"type": "paragraph"
+										}
+									]
+								}
+							],
+							[
+								"project_image",
+								{
+									"alt": "SaaS landing page mockup",
+									"edit": {
+										"background": "transparent",
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"zoom": 1
+									},
+									"height": 3333,
+									"origin": {
+										"height": 3333,
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+										"width": 5000
+									},
+									"url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+									"width": 5000,
+									"credits": null,
+									"__TYPE__": "ImageContent"
+								}
+							],
+							[
+								"tech_stack",
+								{
+									"__TYPE__": "GroupContentType",
+									"value": [
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "HTML"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "SCSS"
+													}
+												]
+											]
+										},
+										{
+											"__TYPE__": "GroupItemContent",
+											"value": [
+												[
+													"tag",
+													{
+														"__TYPE__": "FieldContent",
+														"type": "Text",
+														"value": "Responsive"
+													}
+												]
+											]
+										}
+									]
+								}
+							],
+							[
+								"github_link",
+								{
+									"key": "59a3c036-672a-4faf-a4c3-b024994f6d46",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://github.com/username/saas-landing",
+										"text": "View Github"
+									}
+								}
+							],
+							[
+								"demo_link",
+								{
+									"key": "e069f9ea-89df-4663-93e7-8a03d00bf291",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://saas-landing-demo.example.com",
+										"text": "View project"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"content": {
+							"text": "Projects"
+						},
+						"type": "heading2"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

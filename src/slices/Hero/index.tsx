@@ -8,7 +8,12 @@ type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-16 lg:pb-32 lg:pt-32">
+    <section 
+      id="hero"
+      className="relative overflow-hidden px-6 pb-20 pt-16 lg:pb-32 lg:pt-32"
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2">
           {/* Left Content */}

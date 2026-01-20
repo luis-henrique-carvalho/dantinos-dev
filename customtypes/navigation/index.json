@@ -20,12 +20,29 @@
                 "single": "heading3"
               }
             },
-            "link": {
+            "link_type": {
+              "type": "Select",
+              "config": {
+                "label": "Link Type",
+                "placeholder": "Select link type",
+                "options": ["page", "section"]
+              }
+            },
+            "page_link": {
               "type": "Link",
               "config": {
-                "label": "Link",
-                "placeholder": "Link for navigation item",
-                "select": null
+                "label": "Page Link",
+                "placeholder": "Link to page (blog, about, etc)",
+                "select": null,
+                "allowText": false,
+                "allowTargetBlank": true
+              }
+            },
+            "section_id": {
+              "type": "Text",
+              "config": {
+                "label": "Section ID",
+                "placeholder": "e.g., featured-projects, about, skills"
               }
             }
           }

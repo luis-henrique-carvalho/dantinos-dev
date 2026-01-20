@@ -90,7 +90,7 @@ const certificationCardVariants = {
  */
 const SkillsCertifications: FC<SkillsCertificationsProps> = ({ slice }) => {
     return (
-        <Bounded as="section" yPadding="base" className="border-t border-white/5">
+        <Bounded as="section" yPadding="lg" className="border-t border-white/5">
             <motion.div
                 className="grid gap-16 md:gap-24 lg:grid-cols-2"
                 initial="hidden"
@@ -214,7 +214,7 @@ const SkillsCertifications: FC<SkillsCertificationsProps> = ({ slice }) => {
                                 return (
                                     <motion.div
                                         key={certIndex}
-                                        className="group p-4 rounded-lg bg-[#0B0F17] border border-slate-800 hover:border-accent/50 transition-all duration-300"
+                                        className="group p-4 rounded-lg bg-card border border-slate-800 hover:border-accent/50 transition-all duration-300"
                                         variants={certificationCardVariants}
                                         whileHover="hover"
                                     >

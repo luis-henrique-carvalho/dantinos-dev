@@ -1,19 +1,17 @@
 "use client";
 
 import * as React from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
-import { asText } from "@prismicio/client";
+import { asText, isFilled } from "@prismicio/client";
 
 import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
@@ -29,15 +27,72 @@ interface HeaderProps {
     navigation: any;
 }
 
+interface NavLink {
+    label: any;
+    link_type?: string;
+    page_link?: any;
+    section_id?: string;
+}
+
 export function Header({ settings, navigation }: HeaderProps) {
     const [isOpen, setIsOpen] = React.useState(false);
 
+    const renderNavLink = (item: NavLink, isMobile = false) => {
+        const linkLabel = <PrismicText field={item.label} />;
+
+        // Link de seção (âncora)
+        if (item.link_type === "section" && item.section_id) {
+            const href = `/#${item.section_id}`;
+            const className = isMobile
+                ? "text-muted-foreground hover:text-foreground block py-2 text-lg font-medium transition-colors"
+                : navigationMenuTriggerStyle();
+
+            return (
+                <a
+                    href={href}
+                    className={className}
+                    onClick={isMobile ? () => setIsOpen(false) : undefined}
+                >
+                    {linkLabel}
+                </a>
+            );
+        }
+
+        // Link para página
+        if (item.link_type === "page" && isFilled.link(item.page_link)) {
+            const className = isMobile
+                ? "text-muted-foreground hover:text-foreground block py-2 text-lg font-medium transition-colors"
+                : navigationMenuTriggerStyle();
+
+            return (
+                <PrismicNextLink
+                    field={item.page_link}
+                    className={className}
+                    onClick={isMobile ? () => setIsOpen(false) : undefined}
+                >
+                    {linkLabel}
+                </PrismicNextLink>
+            );
+        }
+
+        // Fallback para links antigos (compatibilidade)
+        return (
+            <PrismicNextLink
+                field={item.page_link}
+                className={isMobile ? "text-muted-foreground hover:text-foreground block py-2 text-lg font-medium transition-colors" : navigationMenuTriggerStyle()}
+                onClick={isMobile ? () => setIsOpen(false) : undefined}
+            >
+                {linkLabel}
+            </PrismicNextLink>
+        );
+    };
+
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-            <div className="container flex h-16 items-center justify-between px-4 sm:px-8">
+        <header className="sticky top-0 z-50 w-full border-b border-slate-800/30 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+            <div className="flex h-20 items-center justify-between px-6 lg:px-12 xl:px-16 mx-auto max-w-7xl w-full">
                 <PrismicNextLink
                     href="/"
-                    className="mr-6 flex items-center space-x-2"
+                    className="mr-8 flex items-center space-x-2"
                 >
                     <span className="text-xl font-bold tracking-tight">
                         <PrismicText field={settings.data.siteTitle} />
@@ -48,15 +103,10 @@ export function Header({ settings, navigation }: HeaderProps) {
                 <div className="hidden md:flex">
                     <NavigationMenu>
                         <NavigationMenuList>
-                            {navigation.data?.links.map((item: any) => (
+                            {navigation.data?.links.map((item: NavLink) => (
                                 <NavigationMenuItem key={asText(item.label)}>
-                                    <NavigationMenuLink
-                                        asChild
-                                        className={navigationMenuTriggerStyle()}
-                                    >
-                                        <PrismicNextLink field={item.link}>
-                                            <PrismicText field={item.label} />
-                                        </PrismicNextLink>
+                                    <NavigationMenuLink asChild>
+                                        {renderNavLink(item)}
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                             ))}
@@ -77,7 +127,7 @@ export function Header({ settings, navigation }: HeaderProps) {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="right" className="bg-background pr-0">
-                            <SheetTitle className="sr-only">Navigaton Menu</SheetTitle>
+                            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                             <div className="px-7">
                                 <PrismicNextLink
                                     href="/"
@@ -91,15 +141,10 @@ export function Header({ settings, navigation }: HeaderProps) {
                             </div>
 
                             <div className="mt-8 flex flex-col gap-4 px-7">
-                                {navigation.data?.links.map((item: any) => (
-                                    <PrismicNextLink
-                                        key={asText(item.label)}
-                                        field={item.link}
-                                        className="text-muted-foreground hover:text-foreground block py-2 text-lg font-medium transition-colors"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        <PrismicText field={item.label} />
-                                    </PrismicNextLink>
+                                {navigation.data?.links.map((item: NavLink) => (
+                                    <div key={asText(item.label)}>
+                                        {renderNavLink(item, true)}
+                                    </div>
                                 ))}
                             </div>
                         </SheetContent>

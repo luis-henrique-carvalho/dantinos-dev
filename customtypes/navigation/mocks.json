@@ -14,20 +14,80 @@
                   {
                     "type": "heading3",
                     "content": {
-                      "text": "Better"
+                      "text": "Featured Projects"
                     }
                   }
                 ]
               }
             ],
             [
-              "link",
+              "link_type",
+              {
+                "__TYPE__": "SelectContent",
+                "value": "section"
+              }
+            ],
+            [
+              "page_link",
               {
                 "__TYPE__": "LinkContent",
                 "value": {
                   "__TYPE__": "ExternalLink",
-                  "url": "http://google.com"
+                  "url": "https://example.com"
                 }
+              }
+            ],
+            [
+              "section_id",
+              {
+                "__TYPE__": "TextContent",
+                "value": "featured-projects"
+              }
+            ]
+          ]
+        },
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "label",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "heading3",
+                    "content": {
+                      "text": "Blog"
+                    }
+                  }
+                ]
+              }
+            ],
+            [
+              "link_type",
+              {
+                "__TYPE__": "SelectContent",
+                "value": "page"
+              }
+            ],
+            [
+              "page_link",
+              {
+                "__TYPE__": "LinkContent",
+                "value": {
+                  "__TYPE__": "Document",
+                  "id": "blog",
+                  "type": "blog_post",
+                  "tags": [],
+                  "slug": "blog"
+                }
+              }
+            ],
+            [
+              "section_id",
+              {
+                "__TYPE__": "TextContent",
+                "value": ""
               }
             ]
           ]

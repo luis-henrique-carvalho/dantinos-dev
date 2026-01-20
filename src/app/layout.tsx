@@ -21,6 +21,9 @@ export default async function RootLayout({
   const settings = await client.getSingle("settings");
   const navigation = await client.getSingle("navigation");
 
+  console.log("Settings fetched in layout:", settings);
+  console.log("Navigation fetched in layout:", JSON.stringify(navigation.data));
+
   return (
     <html lang="en" className={inter.variable}>
       <head>

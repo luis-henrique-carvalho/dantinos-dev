@@ -78,7 +78,8 @@ const ExperienceSection: FC<ExperienceSectionProps> = ({ slice }) => {
     <Bounded
       as="section"
       yPadding="base"
-      className="border-t border-white/5 bg-[#0B0F17]"
+      id="experience"
+      className="border-t border-white/5 bg-card"
     >
       {/* Section Heading */}
       {isFilled.richText(slice.primary.heading) && (

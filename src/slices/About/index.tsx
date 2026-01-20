@@ -118,7 +118,7 @@ const About = ({ slice }: AboutProps) => {
         },
     };
     return (
-        <Bounded as="section" yPadding="base">
+        <Bounded as="section" yPadding="lg" id="about">
             <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
                 {/* Left Column: Timeline */}
                 <div className="lg:col-span-5">
