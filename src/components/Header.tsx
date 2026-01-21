@@ -127,7 +127,7 @@ export function Header({ settings, navigation }: HeaderProps) {
                         </SheetTrigger>
                         <SheetContent side="right" className="bg-background pr-0">
                             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                            <div className="px-7">
+                            <div className="px-7 h-12 flex items-center border-b border-slate-800/30">
                                 <PrismicNextLink
                                     href="/"
                                     className="flex items-center"
