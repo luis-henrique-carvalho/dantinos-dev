@@ -209,6 +209,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactSlice
   | FeaturedProjectsSlice
   | ExperienceSectionSlice
   | TechStackSlice
@@ -481,6 +482,160 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *Contact → Default → Primary → Social Media Links*
+ */
+export interface ContactSliceDefaultPrimarySocialLinksItem {
+  /**
+   * Platform field in *Contact → Default → Primary → Social Media Links*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.socialLinks[].platform
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  platform: prismic.SelectField<
+    "LinkedIn" | "GitHub" | "Email" | "Twitter" | "Instagram"
+  >;
+
+  /**
+   * URL field in *Contact → Default → Primary → Social Media Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: https://...
+   * - **API ID Path**: contact.default.primary.socialLinks[].url
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  url: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Heading field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Name Field Label field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Your Name
+   * - **API ID Path**: contact.default.primary.nameLabel
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  nameLabel: prismic.KeyTextField;
+
+  /**
+   * Email Field Label field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Your Email
+   * - **API ID Path**: contact.default.primary.emailLabel
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  emailLabel: prismic.KeyTextField;
+
+  /**
+   * Project Type Label field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Project Type
+   * - **API ID Path**: contact.default.primary.projectTypeLabel
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  projectTypeLabel: prismic.KeyTextField;
+
+  /**
+   * Message Field Label field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Your Message
+   * - **API ID Path**: contact.default.primary.messageLabel
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  messageLabel: prismic.KeyTextField;
+
+  /**
+   * Submit Button Text field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Send via WhatsApp
+   * - **API ID Path**: contact.default.primary.submitButtonText
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  submitButtonText: prismic.KeyTextField;
+
+  /**
+   * WhatsApp Number field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: +55 (XX) XXXXX-XXXX
+   * - **API ID Path**: contact.default.primary.whatsappNumber
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  whatsappNumber: prismic.KeyTextField;
+
+  /**
+   * Social Media Links field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.socialLinks[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  socialLinks: prismic.GroupField<
+    Simplify<ContactSliceDefaultPrimarySocialLinksItem>
+  >;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact section with form and social media links
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
 
 /**
  * Item in *ExperienceSection → Default → Primary → Experience Items*
@@ -1571,6 +1726,11 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      ContactSlice,
+      ContactSliceDefaultPrimarySocialLinksItem,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       ExperienceSectionSlice,
       ExperienceSectionSliceDefaultPrimaryItemsItem,
       ExperienceSectionSliceDefaultPrimary,

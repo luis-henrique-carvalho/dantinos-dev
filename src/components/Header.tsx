@@ -6,7 +6,6 @@ import { PrismicNextLink } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
 import { asText, isFilled } from "@prismicio/client";
 
-import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
     NavigationMenuItem,

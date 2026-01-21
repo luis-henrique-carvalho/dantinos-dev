@@ -1,0 +1,104 @@
+{
+  "id": "contact",
+  "type": "SharedSlice",
+  "name": "Contact",
+  "description": "Contact section with form and social media links",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "single": "heading1,heading2,heading3"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "nameLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Name Field Label",
+            "placeholder": "Your Name"
+          }
+        },
+        "emailLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Email Field Label",
+            "placeholder": "Your Email"
+          }
+        },
+        "projectTypeLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Project Type Label",
+            "placeholder": "Project Type"
+          }
+        },
+        "messageLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Message Field Label",
+            "placeholder": "Your Message"
+          }
+        },
+        "submitButtonText": {
+          "type": "Text",
+          "config": {
+            "label": "Submit Button Text",
+            "placeholder": "Send via WhatsApp"
+          }
+        },
+        "whatsappNumber": {
+          "type": "Text",
+          "config": {
+            "label": "WhatsApp Number",
+            "placeholder": "+55 (XX) XXXXX-XXXX"
+          }
+        },
+        "socialLinks": {
+          "type": "Group",
+          "config": {
+            "label": "Social Media Links",
+            "repeat": true,
+            "fields": {
+              "platform": {
+                "type": "Select",
+                "config": {
+                  "label": "Platform",
+                  "options": [
+                    "LinkedIn",
+                    "GitHub",
+                    "Email",
+                    "Twitter",
+                    "Instagram"
+                  ]
+                }
+              },
+              "url": {
+                "type": "Link",
+                "config": {
+                  "label": "URL",
+                  "placeholder": "https://..."
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
