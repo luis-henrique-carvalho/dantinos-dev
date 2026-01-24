@@ -7,6 +7,8 @@ import { asText } from "@prismicio/client";
 
 import { createClient, repositoryName } from "@/prismicio";
 import { Header } from "@/components/Header";
+import { SliceZone } from "@prismicio/react";
+import { components } from "@/slices";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,11 +45,7 @@ export default async function RootLayout({
         <main className="flex-1 w-full">
           {children}
         </main>
-        <div className="container py-6 md:py-8">
-          <footer className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {asText(settings.data.siteTitle)}
-          </footer>
-        </div>
+        <SliceZone slices={settings.data.footer_slices} components={components} />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

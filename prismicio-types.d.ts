@@ -220,7 +220,8 @@ type PageDocumentDataSlicesSlice =
   | ImageSlice
   | ImageCardsSlice
   | TextWithImageSlice
-  | SkillsCertificationsSlice;
+  | SkillsCertificationsSlice
+  | FooterSlice;
 
 /**
  * Content for Page documents
@@ -303,6 +304,8 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type SettingsDocumentDataFooterSlicesSlice = FooterSlice;
+
 /**
  * Content for Settings documents
  */
@@ -317,6 +320,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   siteTitle: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Settings*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer_slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  footer_slices: prismic.SliceZone<SettingsDocumentDataFooterSlicesSlice>;
 }
 
 /**
@@ -911,6 +925,142 @@ export type FeaturedProjectsSlice = prismic.SharedSlice<
   "featured_projects",
   FeaturedProjectsSliceVariation
 >;
+
+/**
+ * Item in *Footer → Default → Primary → Navigation Links*
+ */
+export interface FooterSliceDefaultPrimaryNavigationLinksItem {
+  /**
+   * Label field in *Footer → Default → Primary → Navigation Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Link label...
+   * - **API ID Path**: footer.default.primary.navigation_links[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Footer → Default → Primary → Navigation Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link destination...
+   * - **API ID Path**: footer.default.primary.navigation_links[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Item in *Footer → Default → Primary → Social Links*
+ */
+export interface FooterSliceDefaultPrimarySocialLinksItem {
+  /**
+   * Link field in *Footer → Default → Primary → Social Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Social profile link...
+   * - **API ID Path**: footer.default.primary.social_links[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Platform field in *Footer → Default → Primary → Social Links*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Instagram
+   * - **API ID Path**: footer.default.primary.social_links[].platform
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  platform: prismic.SelectField<
+    | "Instagram"
+    | "Facebook"
+    | "Twitter"
+    | "LinkedIn"
+    | "YouTube"
+    | "WhatsApp"
+    | "TikTok",
+    "filled"
+  >;
+}
+
+/**
+ * Primary content in *Footer → Default → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * Address field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter company address...
+   * - **API ID Path**: footer.default.primary.address
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  address: prismic.RichTextField;
+
+  /**
+   * Copyright Text field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: e.g., © 2024 Your Company. All rights reserved.
+   * - **API ID Path**: footer.default.primary.copyright
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  copyright: prismic.KeyTextField;
+
+  /**
+   * Navigation Links field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.navigation_links[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  navigation_links: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimaryNavigationLinksItem>
+  >;
+
+  /**
+   * Social Links field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.social_links[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  social_links: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimarySocialLinksItem>
+  >;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: A comprehensive footer slice with social media links, quick links, copyright, and address.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -1719,6 +1869,7 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      SettingsDocumentDataFooterSlicesSlice,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimaryServicesItem,
@@ -1742,6 +1893,12 @@ declare module "@prismicio/client" {
       FeaturedProjectsSliceDefaultPrimary,
       FeaturedProjectsSliceVariation,
       FeaturedProjectsSliceDefault,
+      FooterSlice,
+      FooterSliceDefaultPrimaryNavigationLinksItem,
+      FooterSliceDefaultPrimarySocialLinksItem,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

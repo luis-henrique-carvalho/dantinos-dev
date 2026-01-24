@@ -1,0 +1,92 @@
+{
+  "description": "A comprehensive footer slice with social media links, quick links, copyright, and address.",
+  "id": "footer",
+  "name": "Footer",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "items": {},
+      "name": "Default",
+      "primary": {
+        "address": {
+          "config": {
+            "allowTargetBlank": true,
+            "label": "Address",
+            "multi": "paragraph,heading4,heading5,heading6,list-item,o-list-item",
+            "placeholder": "Enter company address..."
+          },
+          "type": "StructuredText"
+        },
+        "copyright": {
+          "config": {
+            "label": "Copyright Text",
+            "placeholder": "e.g., © 2024 Your Company. All rights reserved."
+          },
+          "type": "Text"
+        },
+        "navigation_links": {
+          "config": {
+            "fields": {
+              "label": {
+                "config": {
+                  "label": "Label",
+                  "placeholder": "Link label..."
+                },
+                "type": "Text"
+              },
+              "link": {
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Link",
+                  "placeholder": "Link destination...",
+                  "select": null
+                },
+                "type": "Link"
+              }
+            },
+            "label": "Navigation Links"
+          },
+          "type": "Group"
+        },
+        "social_links": {
+          "config": {
+            "fields": {
+              "link": {
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Link",
+                  "placeholder": "Social profile link...",
+                  "select": null
+                },
+                "type": "Link"
+              },
+              "platform": {
+                "config": {
+                  "default_value": "Instagram",
+                  "label": "Platform",
+                  "options": [
+                    "Instagram",
+                    "Facebook",
+                    "Twitter",
+                    "LinkedIn",
+                    "YouTube",
+                    "WhatsApp",
+                    "TikTok"
+                  ]
+                },
+                "type": "Select"
+              }
+            },
+            "label": "Social Links"
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

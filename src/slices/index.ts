@@ -7,6 +7,7 @@ export const components = {
   contact: dynamic(() => import("./Contact")),
   experience_section: dynamic(() => import("./ExperienceSection")),
   featured_projects: dynamic(() => import("./FeaturedProjects")),
+  footer: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),

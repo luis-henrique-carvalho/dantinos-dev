@@ -1,0 +1,160 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"address": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"content": {
+							"text": "Rua das Flores, 123 - Centro, São Paulo - SP, 01234-567"
+						},
+						"type": "paragraph"
+					}
+				]
+			},
+			"copyright": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "© 2024 Dantinos. Todos os direitos reservados."
+			},
+			"navigation_links": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Home"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "a8c6b7d7-e1e1-4c1c-999d-111c111c1112",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "/"
+									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Serviços"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "a8c6b7d7-e1e1-4c1c-999d-111c111c1114",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "/servicos"
+									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Contato"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "a8c6b7d7-e1e1-4c1c-999d-111c111c1116",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "/contato"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"social_links": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"link",
+								{
+									"key": "a8c6b7d7-e1e1-4c1c-999d-111c111c1118",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://instagram.com/dantinos"
+									}
+								}
+							],
+							[
+								"platform",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Select",
+									"value": "Instagram"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"link",
+								{
+									"key": "a8c6b7d7-e1e1-4c1c-999d-111c111c1120",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://facebook.com/dantinos"
+									}
+								}
+							],
+							[
+								"platform",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Select",
+									"value": "Facebook"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
